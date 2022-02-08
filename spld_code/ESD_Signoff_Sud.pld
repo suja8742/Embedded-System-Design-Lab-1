@@ -1,0 +1,26 @@
+Name     	ESD_Lab1Part1 ;
+PartNo   	00 ;
+Date     	1/27/2022 ;
+Revision 	01 ;
+Designer 	Sudarshan ;
+Company  	University of Colorado ;
+Assembly 	None ;
+Location  	Boulder;
+Device   	g16v8a;
+
+/* *************** INPUT PINS *********************/
+PIN 2 		= A15;                          /*A15 pin is given as input to PIN 2 of AT16V8C*/
+PIN 3 		= A14;                          /*A14 pin is given as input to PIN 3 of AT16V8C*/
+PIN 4 		= A13;                          /*A13 pin is given as input to PIN 4 of AT16V8C*/
+PIN 5 		= A12;                          /*A12 is given as input to PIN 5 of AT16V8C*/
+PIN 6 		= n_RD;                         /*RD is connected to PIN 6 of AT16V8C*/
+PIN 7 		= n_PSEN;                       /*PSEN is connected to PIN 7 of AT16V8C*/
+
+/* *************** OUTPUT PINS *********************/
+PIN 12 	= n_READ;                           /*Output of n_READ is avaialble on PIN 12 of the SPLD*/
+PIN 13 	= n_CSPERIPH;                       /*Output of n_CSPERIPH is avaialble on PIN 13 of the SPLD*/
+
+/* ***************   LOGIC     *********************/
+n_READ 	= n_RD & n_PSEN;                    /*nREAD is high when both n_RD and n_PSEN are high, only.*/
+n_CSPERIPH 	= ! (A15 & A14 & A13 & A12);    /*n_CSPERIPH is low only for addresses in the range of F000h-FFFFh*/
+

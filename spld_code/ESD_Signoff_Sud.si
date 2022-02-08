@@ -1,0 +1,27 @@
+Name     ESD_Lab1Part1;
+PartNo   00;
+Date     1/27/2022;
+Revision 01;
+Designer Sudarshan;
+Company  University of Colorado;
+Assembly None;
+Location Boulder;
+Device   g16v8a;
+
+
+ORDER: A15, A14, A13, A12, n_RD, n_PSEN, n_READ, n_CSPERIPH; 
+
+
+VECTORS:
+$MSG  " 	Output Simulation";
+$MSG  " 		 and 	";
+$MSG  " 	   A15 A14 A13 A12  nRD   nPSEN   nREAD   nCSPERIPH";
+/*The test vectors below are compared with the logic in the .PLD file. Based on this, we can observe the waveforms on WinSim to simulate the expected behavior.*/
+/*The order for inputs is provided above in the 'ORDER' tab.*/
+000000LH
+000001LH
+100000LH
+100001LH
+111111HL
+110110LH
+
